@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles.css">
+    <title>Weather App</title>
+</head>
+<body>
+    {{{body}}}
+
+    <div class="total">
+        <div class="container">
+            <h1>{{name}}</h1>
+            {{#if (isEquals weather "Rain")}}
+                <img class="img_weather" src="/img/rain.png" alt="rain_img">
+            {{else}}
+                {{#if (isEquals weather "Clouds")}}
+                    <img class="img_weather" src="/img/cloundy.png" alt="cloundy_img">
+                {{else}}
+                    {{#if (isEquals weather "Clear")}}
+                        <img class="img_weather" src="/img/sunny.png" alt="sunny_img">
+                    {{else}}
+
+                    {{/if}}
+                {{/if}}
+            {{/if}}
+
+            <h1>{{weather}}</h1> 
+
+            <h2 class="temperature">{{temperature}}º C</h2>
+            <p>Humidity: {{humidity}}</p>
+            <p>Wind Speed: {{wind.speed}}</p>
+
+            <form action="/" method="POST">
+                <input class="city_input" type="text" name="city" placeholder="Search the place" required>
+                <button class="btn" type="submit">
+                    <img class="icon_s" src="/img/searchicon.png" alt="">
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
